@@ -26,12 +26,14 @@ function showOnly(id) {
   const history = document.getElementById("history");
   const transfer = document.getElementById("transfer-money");
   const bonus = document.getElementById("get-bonus");
+  const payBill = document.getElementById("pay-bill");
   // hide all
   addmoney.classList.add("hidden");
   cashout.classList.add("hidden");
   history.classList.add("hidden");
   transfer.classList.add("hidden");
   bonus.classList.add("hidden");
+  payBill.classList.add("hidden");
 
   // show only parameter id element
   const selected = document.getElementById(id);
