@@ -39,6 +39,7 @@
     </style>
   </head>
   <body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <!-- Header Part -->
     <header class="border-b-2 border-gray-300 sticky top-0 bg-base-200 z-10">
       <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
         <div class="left flex gap-1">
@@ -60,6 +61,7 @@
       </section>
     </header>
 
+    <!-- Welcome Massage -->
     <section class="w-11/12 mx-auto py-10 space-y-5">
       <h2 class="text-3xl font-bold">
         Welcome to Pay<span class="text-primary">oo</span>
@@ -69,6 +71,7 @@
         low and
       </p>
 
+      <!-- Main Page Buttons -->
       <div class="buttons grid grid-cols-3 gap-3">
         <button
           onclick="showOnly('add-money')"
@@ -96,13 +99,17 @@
           <img src="./assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button
+          onclick="showOnly('history')"
+          class="btn flex-col h-full py-4 btn-primary btn-soft"
+        >
           <img src="./assets/opt-6.png" alt="" />
           <p>Transactions</p>
         </button>
       </div>
     </section>
 
+    <!-- Add Money Option -->
     <section id="add-money" class="w-11/12 mx-auto py-5 hidden">
       <h2 class="text-xl font-bold mb-5">Add Money</h2>
       <div class="card bg-base-100 w-full shadow rounded-2xl">
@@ -127,7 +134,6 @@
             <input
               id="add-money-number"
               type="text"
-              value="01780200940"
               class="input w-full rounded-full bg-base-200"
               placeholder="Enter 11 digit account number"
             />
@@ -161,6 +167,7 @@
       </div>
     </section>
 
+    <!-- Cashout Option -->
     <section id="cashout" class="w-11/12 mx-auto py-5">
       <h2 class="text-xl font-bold mb-5">Cashout</h2>
       <div class="card bg-base-100 w-full shadow rounded-2xl">
@@ -198,6 +205,53 @@
           </fieldset>
         </div>
       </div>
+    </section>
+
+    <section id="transfer-money" class="w-11/12 mx-auto py-5">
+      <h2 class="text-xl font-bold mb-5">Transfer Money</h2>
+      <div class="card bg-base-100 w-full shadow rounded-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label font-medium text-neutral"
+              >User Account Number</label
+            >
+            <input
+              id="transfer-number"
+              type="text"
+              class="input w-full rounded-full bg-base-200"
+              placeholder="Enter 11 digit number"
+            />
+            <br />
+            <label class="label font-medium text-neutral">Amount</label>
+            <input
+              id="transfer-amount"
+              type="number"
+              class="input w-full rounded-full bg-base-200"
+              placeholder="Enter amount to transfer"
+            />
+            <br />
+            <label class="label font-medium text-neutral">Pin Number</label>
+            <input
+              id="transfer-pin"
+              maxlength="4"
+              minlength="4"
+              type="password"
+              class="input w-full rounded-full bg-base-200"
+              placeholder="Enter 4 Digit Pin"
+            />
+            <div></div>
+            <button id="transfer-btn" class="btn btn-primary mt-4 rounded-full">
+              Send Now
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transaction History Option -->
+    <section id="history" class="w-11/12 mx-auto py-5 hidden">
+      <h2 class="text-xl font-bold mb-5">Transaction History</h2>
+      <div class="space-y-5" id="history-container"></div>
     </section>
 
     <script src="./script/machine.js"></script>

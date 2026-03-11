@@ -23,9 +23,11 @@ function setBalance(value) {
 function showOnly(id) {
   const addmoney = document.getElementById("add-money");
   const cashout = document.getElementById("cashout");
+  const history = document.getElementById("history");
   // hide all
   addmoney.classList.add("hidden");
   cashout.classList.add("hidden");
+  history.classList.add("hidden");
 
   // show only parameter id element
   const selected = document.getElementById(id);

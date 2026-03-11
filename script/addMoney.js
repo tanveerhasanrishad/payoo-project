@@ -26,6 +26,17 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
 from ${bankAccount} 
 at ${new Date()}`);
     setBalance(newBalance);
+    // get the history container
+    const history = document.getElementById("history-container");
+    // create a new div
+    const newHistory = document.createElement("div");
+    // add new div innerHTML
+    newHistory.innerHTML = `
+    <div class="transaction-card p-5 bg-base-100">Balance Added Successfully from ${bankAccount} , acc-no ${accNo} at ${new Date()}
+    </div>
+    `;
+    // append the new div in history container
+    history.appendChild(newHistory);
   } else {
     alert("Wrong Pin Number");
     return;

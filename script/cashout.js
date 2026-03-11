@@ -33,6 +33,17 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
     // show an alert > set balance
     alert("Cash out successful");
     setBalance(newBalance);
+    // get the history container
+    const history = document.getElementById("history-container");
+    // create a new div
+    const newHistory = document.createElement("div");
+    // add new div innerHTML
+    newHistory.innerHTML = `
+    <div class="transaction-card p-5 bg-base-100">Cashout ${cashoutAmount} Tk Successfully to ${cashoutNumber} at ${new Date()}
+    </div>
+    `;
+    // append the new div in history container
+    history.appendChild(newHistory);
   } else {
     // show an alert > return
     alert("Invaild Pin");
