@@ -20,7 +20,7 @@ document.getElementById("pay-bill-btn").addEventListener("click", function () {
   }
   const pin = getValueFromInput("pay-bill-pin");
   if (pin == "1234") {
-    alert(`Bill Pay Successfully 
+    alert(`Bill Paid ${amount} Tk Successfully 
 to ${accNo} 
 at ${new Date()}`);
     const newBalance = currentBalance - Number(amount);
@@ -31,7 +31,7 @@ at ${new Date()}`);
     const newHistory = document.createElement("div");
     // add new div innerHTML
     newHistory.innerHTML = `
-    <div class="transaction-card p-5 bg-base-100">Bill Paid Successfully to ${bank} , Acc-No ${accNo} at ${new Date()}
+    <div class="transaction-card p-5 bg-base-100">Bill Paid ${amount} Tk Successfully to ${bank} , Acc-No ${accNo} at ${new Date()}
     </div>
     `;
     // append the new div in history container
